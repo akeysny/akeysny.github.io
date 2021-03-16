@@ -31,4 +31,39 @@ One of the most common targets for XSS attacks are user cookies. Cookies are dat
 
 In XSS, JavaScript is embedded in the response coming from the website, so the browser views it as trustworthy code from the current domain and gives access to the website's previously stored cookies. In JavaScript, accessing cookie data is as simple as calling{% highlight ruby %}document.cookie{% endhighlight ruby %}
 
+#### 5. PHP Cookies
 
+Cookies, or browser cookies, are small pieces of data which the web server asks the client's web browser to store. Each request back to the server will include these pieces of data. The data is organized as key/value pairs.
+
+A cookie can be set using PHP's{% highlight ruby %}setcookie(){% endhighlight ruby %}function.
+
+{% highlight ruby %}
+<?php
+  setcookie('language', 'english');
+?>
+{% endhighlight ruby %}
+
+On future requests, the cookie key/value pairs will be assigned to the{% highlight ruby %}$_COOKIE{% endhighlight ruby %}superglobal.
+
+{% highlight ruby %}
+<?php
+  echo $_COOKIE['language'];
+  // english
+?>
+{% endhighlight ruby %}
+
+In addition to the{% highlight ruby %}$name{% endhighlight ruby %} and {% highlight ruby %}$value{% endhighlight ruby %} arguments, {% highlight ruby %}setcookie(){% endhighlight ruby %} also accepts many other arguments for configuration.
+
+{% highlight ruby %}
+<?php
+  $name = 'language';
+  $value = 'english';
+  $expire = time() + 60*60*24*3; // 3 days from now
+  $path = '/blog';
+  $domain = 'www.mysite.com';
+  $secure = isset($_SERVER['HTTPS']); // or use true/false
+  $httponly = true;
+
+  setcookie($name, $value, $expire, $path, $domain, $secure, $httponly);
+?>
+{% endhighlight ruby %}
