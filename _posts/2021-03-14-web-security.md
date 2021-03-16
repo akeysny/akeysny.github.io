@@ -19,6 +19,20 @@ There are three types of Cross-Site Scripting.
 Data from URLs or forms
 Runs immediately when data is received
 
+As an example, imagine a search box at the top of a website. When a user submits a search term, the application searches the database for products matching that term. If no products are found, it responds with:
+
+{% highlight ruby %}<h1>No results were found for: <?php echo $term; ?></h1>{% endhighlight ruby %}
+
+If the search request was:
+
+{% highlight ruby %}GET /search.php?term=candy{% endhighlight ruby %}
+
+The application would return:
+
+{% highlight ruby %}<h1>No results were found for: candy</h1>{% endhighlight ruby %}
+
+Notice that the data being submitted in the URL query is not being sanitized to remove or disable JavaScript before it is output to HTML.
+
 - Stored
 
 Data from database, cookies, and sessions

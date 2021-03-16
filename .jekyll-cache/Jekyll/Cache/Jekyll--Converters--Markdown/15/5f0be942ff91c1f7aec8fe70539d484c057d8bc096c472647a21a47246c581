@@ -1,4 +1,4 @@
-I"`<h2 id="warm-up">Warm Up</h2>
+I"	<h2 id="warm-up">Warm Up</h2>
 
 <p>Let’s warm up by taking a look at what cookies look like. Try to look and inspect them a few different ways.</p>
 
@@ -22,7 +22,7 @@
 
 <p>One of the most common targets for XSS attacks are user cookies. Cookies are data stored in the user’s browser by a website. They are stored on a per-domain basis, so that a website only has access to cookies it set itself.</p>
 
-<p>In XSS, JavaScript is embedded in the response coming from the website, so the browser views it as trustworthy code from the current domain and gives access to the website’s previously stored cookies. In JavaScript, accesses cookie data is as simple as calling</p>
+<p>In XSS, JavaScript is embedded in the response coming from the website, so the browser views it as trustworthy code from the current domain and gives access to the website’s previously stored cookies. In JavaScript, accessing cookie data is as simple as calling</p>
+<figure class="highlight"><pre><code class="language-ruby" data-lang="ruby"><span class="n">document</span><span class="p">.</span><span class="nf">cookie</span></code></pre></figure>
 
-<p>document.cookie</p>
 :ET

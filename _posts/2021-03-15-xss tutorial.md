@@ -29,6 +29,6 @@ In Chrome, while on facebook.com, go to View->Developer->JavaScript Console. In 
 
 One of the most common targets for XSS attacks are user cookies. Cookies are data stored in the user's browser by a website. They are stored on a per-domain basis, so that a website only has access to cookies it set itself.
 
-In XSS, JavaScript is embedded in the response coming from the website, so the browser views it as trustworthy code from the current domain and gives access to the website's previously stored cookies.
+In XSS, JavaScript is embedded in the response coming from the website, so the browser views it as trustworthy code from the current domain and gives access to the website's previously stored cookies. In JavaScript, accessing cookie data is as simple as calling{% highlight ruby %}document.cookie{% endhighlight ruby %}
 
 
