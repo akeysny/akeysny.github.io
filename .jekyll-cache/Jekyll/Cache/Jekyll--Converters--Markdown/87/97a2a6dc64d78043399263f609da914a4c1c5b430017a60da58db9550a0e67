@@ -1,0 +1,10 @@
+I"ó<h2 id="warm-up">Warm Up</h2>
+
+<p>Letâ€™s warm up by taking a look at what cookies look like. Try to look and inspect them a few different ways.</p>
+
+<h4 id="1-using-burp">1. Using Burp</h4>
+
+<p>Go to facebook.com, and look at the request header in Burp. As you can see, multiple cookies are sent with each request. The cookies are sent as a single string, where each cookie is a key-value pair, separated by semicolons.</p>
+
+<p><img src="/img/posts/cookies/Cookies-Burp.JPG" alt="IMDb page" /></p>
+:ET

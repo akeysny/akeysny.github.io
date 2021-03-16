@@ -1,0 +1,20 @@
+I"<h2 id="warm-up">Warm Up</h2>
+
+<p>Let’s warm up by taking a look at what cookies look like. Try to look and inspect them a few different ways.</p>
+
+<h4 id="1-using-burp">1. Using Burp</h4>
+
+<p>Go to facebook.com, and look at the request header in Burp. As you can see, multiple cookies are sent with each request. The cookies are sent as a single string, where each cookie is a key-value pair, separated by semicolons.</p>
+
+<p><img src="/img/posts/cookies/Cookies-Burp.JPG" alt="IMDb page" /></p>
+
+<h4 id="2-using-chrome">2. Using Chrome</h4>
+
+<p>Go to Chrome settings. In the search box in the upper right, type “cookies”. Click “Content Settings” and then “All cookies and site data”. Search for “Facebook” and look at the cookies there. Click on one of the cookies. Each cookie comes with some meta data.</p>
+
+<p><img src="/img/posts/cookies/meta data for cookies.JPG" alt="IMDb page" /></p>
+
+<h4 id="3-in-the-chrome-developer-console">3. In the Chrome Developer Console</h4>
+
+<p>In Chrome, while on facebook.com, go to View-&gt;Developer-&gt;JavaScript Console. In the prompt, type “document.cookie”. If a hacker is able to inject JavaScript onto the site, that’s how they will access the cookies. Notice that not all cookies are being printed. As a developer, you can designate that a cookie is inaccessible to JavaScript, and should only be added for HTTP requests. That will prevent hackers from stealing a session cookie outright, although they can still exploit the fact that there is a logged in session in different ways.</p>
+:ET

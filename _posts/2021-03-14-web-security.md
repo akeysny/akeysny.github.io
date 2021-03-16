@@ -8,7 +8,7 @@ background: '/img/posts/web-security/status-vs-dynamic.jpeg'
 ## Background 
 Of the numerous vulnerabilities related to browser-based web applications, cross-site scripting (XSS) is one of the most common and damaging vulnerabilities. The browser is a sophisticated piece of software, not just because it must render content efficiently and portably, but it must also execute associated JavaScript. As a general rule, any system that executes code can be made to execute malicious code if proper protections aren't used. XSS is a technique in which an attacker is able to "trick" a browser into executing malicious JavaScript that's not part of the legitimate page. Even though web developers have known about it for years, it's still easy to let an XSS vulnerability slip through the cracks.
 
-## The webpage
+
 ![IMDb page](/img/posts/web-security/cyber.jpeg)
 
 ## Types of XSS
