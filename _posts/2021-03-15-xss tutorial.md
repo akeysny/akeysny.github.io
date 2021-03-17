@@ -67,3 +67,37 @@ In addition to the{% highlight ruby %}$name{% endhighlight ruby %} and {% highli
   setcookie($name, $value, $expire, $path, $domain, $secure, $httponly);
 ?>
 {% endhighlight ruby %}
+
+#### 6. Encoding
+
+Encoding is the act of escaping user input so that the browser interprets it only as data, not as code. The most recognizable type of encoding in web development is HTML escaping, which converts characters like < and > into {% highlight ruby %}&lt;{% endhighlight ruby %} and {% highlight ruby %}&gt;{% endhighlight ruby %} respectively.
+
+The following pseudocode is an example of how user input could be encoded using HTML escaping and then inserted into a page by a server-side script:
+
+{% highlight ruby %}
+print "<html>"
+print "Latest comment: "
+print encodeHtml(userInput)
+print "</html>"
+{% endhighlight ruby %}
+
+#### 7. Encoding on the client-side
+
+When encoding user input on the client-side using JavaScript, there are several built-in methods and properties that automatically encode all data in a context-aware manner:
+
+{% highlight ruby %}          
+HTML element content	node.textContent = userInput
+	                element.setAttribute(attribute, userInput)
+HTML attribute value    or
+                        element[attribute] = userInput
+URL query value	        window.encodeURIComponent(userInput)
+CSS value	        element.style.property = userInput
+{% endhighlight ruby %}
+
+#### 8. Which prevention technique to use
+
+Encoding should be your first line of defense against XSS, because its very purpose is to neutralize data so that it cannot be interpreted as code. In some cases, encoding needs to be complemented with validation, as explained earlier. This encoding and validation should be outbound, because only when the input is included in a page do you know which context to encode and validate for.
+
+As a second line of defense, you should use inbound validation to sanitize or reject data that is clearly invalid, such as links using the javascript: protocol. While this cannot by itself provide full security, it is a useful precaution if at any point outbound encoding and validation is improperly performed due to mistakes or errors.
+
+If these two lines of defense are used consistently, your website will be protected from XSS attacks. However, due to the complexity of creating and maintaining an entire website, achieving full protection using only secure input handling can be difficult. As a third line of defense, you should also make use of Content Security Policy (CSP), which we will describe next.

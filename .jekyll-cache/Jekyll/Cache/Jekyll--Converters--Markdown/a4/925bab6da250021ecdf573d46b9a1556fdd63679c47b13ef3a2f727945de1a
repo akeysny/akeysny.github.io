@@ -1,0 +1,84 @@
+I")<h2 id="warm-up">Warm Up</h2>
+
+<p>Let’s warm up by taking a look at what cookies look like. Try to look and inspect them a few different ways.</p>
+
+<h4 id="1-using-burp">1. Using Burp</h4>
+
+<p>Go to facebook.com, and look at the request header in Burp. As you can see, multiple cookies are sent with each request. The cookies are sent as a single string, where each cookie is a key-value pair, separated by semicolons.</p>
+
+<p><img src="/img/posts/cookies/Cookies-Burp.JPG" alt="IMDb page" /></p>
+
+<h4 id="2-using-chrome">2. Using Chrome</h4>
+
+<p>Go to Chrome settings. In the search box in the upper right, type “cookies”. Click “Content Settings” and then “All cookies and site data”. Search for “Facebook” and look at the cookies there. Click on one of the cookies. Each cookie comes with some meta data.</p>
+
+<p><img src="/img/posts/cookies/meta data for cookies.JPG" alt="IMDb page" /></p>
+
+<h4 id="3-in-the-chrome-developer-console">3. In the Chrome Developer Console</h4>
+
+<p>In Chrome, while on facebook.com, go to View-&gt;Developer-&gt;JavaScript Console. In the prompt, type “document.cookie”. If a hacker is able to inject JavaScript onto the site, that’s how they will access the cookies. Notice that not all cookies are being printed. As a developer, you can designate that a cookie is inaccessible to JavaScript, and should only be added for HTTP requests. That will prevent hackers from stealing a session cookie outright, although they can still exploit the fact that there is a logged in session in different ways.</p>
+
+<h4 id="4-xss-cookie-theft">4. XSS Cookie Theft</h4>
+
+<p>One of the most common targets for XSS attacks are user cookies. Cookies are data stored in the user’s browser by a website. They are stored on a per-domain basis, so that a website only has access to cookies it set itself.</p>
+
+<p>In XSS, JavaScript is embedded in the response coming from the website, so the browser views it as trustworthy code from the current domain and gives access to the website’s previously stored cookies. In JavaScript, accessing cookie data is as simple as calling</p>
+<figure class="highlight"><pre><code class="language-ruby" data-lang="ruby"><span class="n">document</span><span class="p">.</span><span class="nf">cookie</span></code></pre></figure>
+
+<h4 id="5-php-cookies">5. PHP Cookies</h4>
+
+<p>Cookies, or browser cookies, are small pieces of data which the web server asks the client’s web browser to store. Each request back to the server will include these pieces of data. The data is organized as key/value pairs.</p>
+
+<p>A cookie can be set using PHP’s</p>
+<figure class="highlight"><pre><code class="language-ruby" data-lang="ruby"><span class="n">setcookie</span><span class="p">()</span></code></pre></figure>
+<p>function.</p>
+
+<figure class="highlight"><pre><code class="language-ruby" data-lang="ruby"><span class="o">&lt;</span><span class="p">?</span><span class="n">php</span>
+  <span class="n">setcookie</span><span class="p">(</span><span class="s1">'language'</span><span class="p">,</span> <span class="s1">'english'</span><span class="p">);</span>
+<span class="sc">?&gt;</span></code></pre></figure>
+
+<p>On future requests, the cookie key/value pairs will be assigned to the</p>
+<figure class="highlight"><pre><code class="language-ruby" data-lang="ruby"><span class="vg">$_COOKIE</span></code></pre></figure>
+<p>superglobal.</p>
+
+<figure class="highlight"><pre><code class="language-ruby" data-lang="ruby"><span class="o">&lt;</span><span class="p">?</span><span class="n">php</span>
+  <span class="n">echo</span> <span class="vg">$_COOKIE</span><span class="p">[</span><span class="s1">'language'</span><span class="p">];</span>
+  <span class="sr">//</span> <span class="n">english</span>
+<span class="sc">?&gt;</span></code></pre></figure>
+
+<p>In addition to the</p>
+<figure class="highlight"><pre><code class="language-ruby" data-lang="ruby"><span class="vg">$name</span></code></pre></figure>
+<p>and</p>
+<figure class="highlight"><pre><code class="language-ruby" data-lang="ruby"><span class="vg">$value</span></code></pre></figure>
+<p>arguments,</p>
+<figure class="highlight"><pre><code class="language-ruby" data-lang="ruby"><span class="n">setcookie</span><span class="p">()</span></code></pre></figure>
+<p>also accepts many other arguments for configuration.</p>
+
+<figure class="highlight"><pre><code class="language-ruby" data-lang="ruby"><span class="o">&lt;</span><span class="p">?</span><span class="n">php</span>
+  <span class="vg">$name</span> <span class="o">=</span> <span class="s1">'language'</span><span class="p">;</span>
+  <span class="vg">$value</span> <span class="o">=</span> <span class="s1">'english'</span><span class="p">;</span>
+  <span class="vg">$expire</span> <span class="o">=</span> <span class="n">time</span><span class="p">()</span> <span class="o">+</span> <span class="mi">60</span><span class="o">*</span><span class="mi">60</span><span class="o">*</span><span class="mi">24</span><span class="o">*</span><span class="mi">3</span><span class="p">;</span> <span class="sr">//</span> <span class="mi">3</span> <span class="n">days</span> <span class="n">from</span> <span class="n">now</span>
+  <span class="vg">$path</span> <span class="o">=</span> <span class="s1">'/blog'</span><span class="p">;</span>
+  <span class="vg">$domain</span> <span class="o">=</span> <span class="s1">'www.mysite.com'</span><span class="p">;</span>
+  <span class="vg">$secure</span> <span class="o">=</span> <span class="n">isset</span><span class="p">(</span><span class="vg">$_SERVER</span><span class="p">[</span><span class="s1">'HTTPS'</span><span class="p">]);</span> <span class="sr">//</span> <span class="n">or</span> <span class="n">use</span> <span class="kp">true</span><span class="sr">/false
+  $httponly = true;
+
+  setcookie($name, $value, $expire, $path, $domain, $secure, $httponly);
+?&gt;</span></code></pre></figure>
+
+<h4 id="6-encoding">6. Encoding</h4>
+
+<p>Encoding is the act of escaping user input so that the browser interprets it only as data, not as code. The most recognizable type of encoding in web development is HTML escaping, which converts characters like &lt; and &gt; into</p>
+<figure class="highlight"><pre><code class="language-ruby" data-lang="ruby"><span class="o">&amp;</span><span class="n">lt</span><span class="p">;</span></code></pre></figure>
+<p>and</p>
+<figure class="highlight"><pre><code class="language-ruby" data-lang="ruby"><span class="o">&amp;</span><span class="n">gt</span><span class="p">;</span></code></pre></figure>
+<p>respectively.</p>
+
+<p>The following pseudocode is an example of how user input could be encoded using HTML escaping and then inserted into a page by a server-side script:</p>
+
+<figure class="highlight"><pre><code class="language-ruby" data-lang="ruby"><span class="nb">print</span> <span class="s2">"&lt;html&gt;"</span>
+<span class="nb">print</span> <span class="s2">"Latest comment: "</span>
+<span class="nb">print</span> <span class="n">encodeHtml</span><span class="p">(</span><span class="n">userInput</span><span class="p">)</span>
+<span class="nb">print</span> <span class="s2">"&lt;/html&gt;"</span></code></pre></figure>
+
+:ET
