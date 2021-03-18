@@ -1,0 +1,41 @@
+I"&<h2 id="kubernetes">Kubernetes</h2>
+
+<p>Kubernetes is the world’s most famous open-source container orchestration engine. It offers the ability to schedule and manage containers-Docker or otherwise-at scale. First, we will learn how to get a Kubernetes environment up and running, and understand the components. We will deploy a sample Kubernetes application and manage it with Kubernetes Dashboard. We will leave the most exciting part for the end; authentication and authorization.</p>
+
+<h2 id="getting-up-and-running-mac-install">Getting up and running: Mac install</h2>
+
+<ol>
+  <li>Setup all prerequisites for minikube (Docker and Virtualbox)</li>
+  <li>Setup and test Minikube</li>
+  <li>Setup and test kubectl</li>
+</ol>
+
+<h3 id="setup-prerequisities">Setup Prerequisities</h3>
+
+<h4 id="docker">Docker:</h4>
+
+<ul>
+  <li>Download links for Docker for Windows: <a href="https://www.docker.com/docker-windows">Windows</a></li>
+  <li>Download links for Docker for Linux: <a href="https://docs.docker.com/engine/installation/linux/docker-ce/ubuntu">Linux</a></li>
+  <li>Download links for Docker for Mac: https://www.docker.com/docker-mac</li>
+</ul>
+
+<p>Command to test:</p>
+
+<figure class="highlight"><pre><code class="language-ruby" data-lang="ruby"><span class="err">$</span> <span class="n">docker</span> <span class="n">version</span></code></pre></figure>
+
+<h4 id="virtualbox">Virtualbox</h4>
+
+<ul>
+  <li>Download link: https://www.virtualbox.org/</li>
+</ul>
+
+<p>Command to test: <code class="language-plaintext highlighter-rouge">virtualbox</code></p>
+
+<h3 id="setup-kubectl">Setup Kubectl:</h3>
+<ul>
+  <li>Download link: https://kubernetes.io/docs/tasks/tools/install-kubectl/#install-kubectl-binary-via-curl</li>
+</ul>
+
+<p>Command to test: <code class="language-plaintext highlighter-rouge">kubectl version</code></p>
+:ET

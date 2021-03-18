@@ -1,0 +1,5 @@
+I"ë<h2 id="kubernetes">Kubernetes</h2>
+
+<p>Kubernetes is the worldâ€™s most famous open-source container orchestration engine. It offers the ability to schedule and manage containers-Docker or otherwise-at scale. First, we will learn how to get a Kubernetes environment up and running, and understand the components. We will deploy a sample Kubernetes application and manage it with Kubernetes Dashboard. We will leave the most exciting part for the end; authentication and authorization.</p>
+
+:ET
