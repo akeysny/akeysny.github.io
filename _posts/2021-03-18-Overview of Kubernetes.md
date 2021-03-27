@@ -50,7 +50,7 @@ Minikube dashboard
 ```
 ![IMDb page](/img/posts/kubernetes/Picture5.png)
 
-We see hear that it loads up the Workload Status. We can also look at Deployments here ->
+We see here that it loads up the Workload Status. We can also look at Deployments here ->
 
 This page just gives us an overview what we have running in our cluster
 
@@ -77,6 +77,40 @@ That’s great.
 You can also go inside of the pod window
 
 ![IMDb page](/img/posts/kubernetes/Picture11.png)
+
+### Authentication and authorization
+
+What does `user` mean from Kubernetes context?
+
+Two kinds of users exist: `Humans` and `Service accounts`
+
+There are 4 pieces of information that define a user:
+
+- Username: a string to identify the end user
+- UID: the identifier that is more consistent or unique than username
+- Group: a string that associates users with a set of commonly grouped users
+- Extra fields
+
+#### Authentication
+
+Does a user have access to the system?
+
+#### Authorization
+
+Can the user perform an action in the system?
+
+### Popular Authentication Modules
+
+- Client certificate authentication enabled by passing the 
+```
+client-ca-file=FILENAME 
+```option to the API server
+
+- Referenced file must contain one or more certificate authorities to validate client certificates
+
+- The common name of a client certificate is used as the user name for the request
+
+
 
 
 

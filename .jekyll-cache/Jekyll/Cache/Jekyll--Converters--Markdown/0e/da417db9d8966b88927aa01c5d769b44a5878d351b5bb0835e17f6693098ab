@@ -1,0 +1,123 @@
+I"s<h1 id="kubernetes">Kubernetes</h1>
+
+<p>Kubernetes is the world’s most famous open-source container orchestration engine. It offers the ability to schedule and manage containers-Docker or otherwise-at scale. First, we will learn how to get a Kubernetes environment up and running, and understand the components. We will deploy a sample Kubernetes application and manage it with Kubernetes Dashboard. We will leave the most exciting part for the end; authentication and authorization.</p>
+
+<h2 id="getting-up-and-running-mac-install">Getting up and running: Mac install</h2>
+
+<ol>
+  <li>Setup all prerequisites for minikube (Docker and Virtualbox)</li>
+  <li>Setup and test Minikube</li>
+  <li>Setup and test kubectl</li>
+</ol>
+
+<h3 id="setup-prerequisities">Setup Prerequisities</h3>
+
+<h4 id="docker">Docker:</h4>
+
+<ul>
+  <li>Download links for Docker for Windows: <a href="https://www.docker.com/docker-windows"><code class="language-plaintext highlighter-rouge">Windows</code></a></li>
+  <li>Download links for Docker for Linux: <a href="https://docs.docker.com/engine/installation/linux/docker-ce/ubuntu"><code class="language-plaintext highlighter-rouge">Linux</code></a></li>
+  <li>Download links for Docker for Mac: <a href="https://www.docker.com/docker-mac"><code class="language-plaintext highlighter-rouge">Mac</code></a></li>
+</ul>
+
+<p>Command to test: <code class="language-plaintext highlighter-rouge">docker version</code></p>
+
+<h4 id="virtualbox">Virtualbox</h4>
+
+<ul>
+  <li>Download link: <a href="https://www.virtualbox.org/"><code class="language-plaintext highlighter-rouge">Virtualbox</code></a></li>
+</ul>
+
+<p>Command to test: <code class="language-plaintext highlighter-rouge">virtualbox</code></p>
+
+<h3 id="setup-kubectl">Setup Kubectl:</h3>
+<ul>
+  <li>Download link: <a href="https://kubernetes.io/docs/tasks/tools/install-kubectl/#install-kubectl-binary-via-curl"><code class="language-plaintext highlighter-rouge">Kubectl</code></a></li>
+</ul>
+
+<p>Command to test: <code class="language-plaintext highlighter-rouge">kubectl version</code></p>
+
+<h3 id="setup-minikube">Setup Minikube:</h3>
+<ul>
+  <li>General Download Instructions: <a href="https://kubernetes.io/docs/tasks/tools/install-minikube/"><code class="language-plaintext highlighter-rouge">Here</code></a></li>
+  <li>Download link: <a href="https://github.com/kubernetes/minikube/releases"><code class="language-plaintext highlighter-rouge">Here</code></a></li>
+</ul>
+
+<p>Command to test: <code class="language-plaintext highlighter-rouge">minikube version</code></p>
+
+<h3 id="kubernetes-dashboard">Kubernetes dashboard</h3>
+
+<p>Type</p>
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>Minikube dashboard
+</code></pre></div></div>
+<p><img src="/img/posts/kubernetes/Picture5.png" alt="IMDb page" /></p>
+
+<p>We see here that it loads up the Workload Status. We can also look at Deployments here -&gt;</p>
+
+<p>This page just gives us an overview what we have running in our cluster</p>
+
+<p><img src="/img/posts/kubernetes/Picture6.png" alt="IMDb page" /></p>
+
+<p>We will look into our Deployments and we notice that we could edit our deployment if we wanted to. We could update a deployment (not recommended).</p>
+
+<p><img src="/img/posts/kubernetes/Picture7.png" alt="IMDb page" /></p>
+
+<p>We can scale a resource</p>
+
+<p><img src="/img/posts/kubernetes/Picture8.png" alt="IMDb page" /></p>
+
+<p>We will notice here that additional pods are coming up.</p>
+
+<p><img src="/img/posts/kubernetes/Picture9.png" alt="IMDb page" /></p>
+
+<p>We notice that these new pods just came up online</p>
+
+<p><img src="/img/posts/kubernetes/Picture10.png" alt="IMDb page" /></p>
+
+<p>That’s great.</p>
+
+<p>You can also go inside of the pod window</p>
+
+<p><img src="/img/posts/kubernetes/Picture11.png" alt="IMDb page" /></p>
+
+<h3 id="authentication-and-authorization">Authentication and authorization</h3>
+
+<p>What does <code class="language-plaintext highlighter-rouge">user</code> mean from Kubernetes context?</p>
+
+<p>Two kinds of users exist: <code class="language-plaintext highlighter-rouge">Humans</code> and <code class="language-plaintext highlighter-rouge">Service accounts</code></p>
+
+<p>There are 4 pieces of information that define a user:</p>
+
+<ul>
+  <li>Username: a string to identify the end user</li>
+  <li>UID: the identifier that is more consistent or unique than username</li>
+  <li>Group: a string that associates users with a set of commonly grouped users</li>
+  <li>Extra fields</li>
+</ul>
+
+<h4 id="authentication">Authentication</h4>
+
+<p>Does a user have access to the system?</p>
+
+<h4 id="authorization">Authorization</h4>
+
+<p>Can the user perform an action in the system?</p>
+
+<h3 id="popular-authentication-modules">Popular Authentication Modules</h3>
+
+<ul>
+  <li>
+    <p>Client certificate authentication enabled by passing the
+<code class="language-plaintext highlighter-rouge">
+client-ca-file=FILENAME
+</code>option to the API server</p>
+  </li>
+  <li>
+    <p>Referenced file must contain one or more certificate authorities to validate client certificates</p>
+  </li>
+  <li>
+    <p>The common name of a client certificate is used as the user name for the request</p>
+  </li>
+</ul>
+
+:ET
