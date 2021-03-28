@@ -1,0 +1,21 @@
+I"ß<h1 id="incident-response-programs">Incident Response Programs</h1>
+
+<ul>
+  <li>
+    <p>Failure to conduct advance planning may lead to disaster.
+This is the recipe for failure. The reality is that people make bad decisions in the heat of a crisis. Developing an Incident Response plan in advance of an incident taking place, allows you to make decisions in a calm environment of a planning phase and exercise good judgement in the heat of an incident.</p>
+  </li>
+  <li>
+    <p>Indident Response Plan Elements</p>
+  </li>
+</ul>
+
+<p><code class="language-plaintext highlighter-rouge">Statement of Purpose</code> Is the plan restricted only to cybersecurity incidents? It should describe clear goals for the incident response effort.</p>
+
+<p><code class="language-plaintext highlighter-rouge">Strategies and goals for incident response</code> Who is responsible for incident handling?</p>
+
+<p><code class="language-plaintext highlighter-rouge">Approach to incident response</code>  What authority did they have?</p>
+
+<p><code class="language-plaintext highlighter-rouge">Communication with other groups</code> In Response Plan should also include communication within the teams, with other groups within the organization and the third parties</p>
+
+:ET

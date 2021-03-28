@@ -1,0 +1,41 @@
+I"ç<h1 id="incident-response-programs">Incident Response Programs</h1>
+
+<ul>
+  <li>
+    <p>Failure to conduct advance planning may lead to disaster.
+This is the recipe for failure. The reality is that people make bad decisions in the heat of a crisis. Developing an Incident Response plan in advance of an incident taking place, allows you to make decisions in a calm environment of a planning phase and exercise good judgement in the heat of an incident.</p>
+  </li>
+  <li>
+    <p>Insident Response Plan Elements</p>
+  </li>
+</ul>
+
+<p><code class="language-plaintext highlighter-rouge">Statement of Purpose</code> Is the plan restricted only to cybersecurity incidents? It should describe clear goals for the incident response effort.</p>
+
+<p><code class="language-plaintext highlighter-rouge">Strategies and goals for incident response</code> Who is responsible for incident handling?</p>
+
+<p><code class="language-plaintext highlighter-rouge">Approach to incident response</code>  What authority did they have?</p>
+
+<p><code class="language-plaintext highlighter-rouge">Communication with other groups</code> Incident Response Plan should also include communication within the teams, with other groups within the organization and the third parties</p>
+
+<p><code class="language-plaintext highlighter-rouge">Senior Leadership Approval</code> You might need that authority when you are taking unpopular actions during Incident Response.</p>
+
+<ul>
+  <li>Incident response teams much have peronnel available 24/7</li>
+</ul>
+
+<h2 id="building-an-ir-team">Building an IR Team</h2>
+
+<ul>
+  <li>Management</li>
+  <li>Information Security</li>
+  <li>Subject matter experts</li>
+  <li>Legal counsel</li>
+  <li>public affairs</li>
+  <li>Human resources</li>
+  <li>Physical security</li>
+</ul>
+
+<p>Make sure that you are ready now to design and train your team so they are ready to respond in the event of an actual cybersecurity incident.</p>
+
+:ET

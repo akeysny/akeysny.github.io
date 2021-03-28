@@ -1,0 +1,106 @@
+I"�<h1 id="incident-response-programs">Incident Response Programs</h1>
+
+<ul>
+  <li>
+    <p>Failure to conduct advance planning may lead to disaster.
+This is the recipe for failure. The reality is that people make bad decisions in the heat of a crisis. Developing an Incident Response plan in advance of an incident taking place, allows you to make decisions in a calm environment of a planning phase and exercise good judgement in the heat of an incident.</p>
+  </li>
+  <li>
+    <p>Insident Response Plan Elements</p>
+  </li>
+</ul>
+
+<p><code class="language-plaintext highlighter-rouge">Statement of Purpose</code> Is the plan restricted only to cybersecurity incidents? It should describe clear goals for the incident response effort.</p>
+
+<p><code class="language-plaintext highlighter-rouge">Strategies and goals for incident response</code> Who is responsible for incident handling?</p>
+
+<p><code class="language-plaintext highlighter-rouge">Approach to incident response</code>  What authority did they have?</p>
+
+<p><code class="language-plaintext highlighter-rouge">Communication with other groups</code> Incident Response Plan should also include communication within the teams, with other groups within the organization and the third parties</p>
+
+<p><code class="language-plaintext highlighter-rouge">Senior Leadership Approval</code> You might need that authority when you are taking unpopular actions during Incident Response.</p>
+
+<ul>
+  <li>Incident response teams must have peronnel available 24/7</li>
+</ul>
+
+<h2 id="building-an-ir-team">Building an IR Team</h2>
+
+<ul>
+  <li>Management</li>
+  <li>Information Security</li>
+  <li>Subject matter experts</li>
+  <li>Legal counsel</li>
+  <li>Public affairs</li>
+  <li>Human resources</li>
+  <li>Physical security</li>
+</ul>
+
+<p>Make sure that you are ready now to design and train your team so they are ready to respond in the event of an actual cybersecurity incident.</p>
+
+<h2 id="mitre-attck"><a href="https://mitre.org">MITRE ATT&amp;CK</a></h2>
+
+<p>Cybersecurity is one of the framework’s focus areas.
+One of their research efforts is the develpment of</p>
+<ul>
+  <li>Adversarial</li>
+  <li>Tactics</li>
+  <li>Techniques</li>
+  <li>&amp;</li>
+  <li>Common</li>
+  <li>Knowledge</li>
+</ul>
+
+<p>This att&amp;ck framework is the collection of knowledge about attackers gathered from real-world organizations over many years.</p>
+
+<p>Let’s look at this table of attack techniques</p>
+
+<p><img src="/img/posts/incident response/pic2.jpeg" alt="IMDb page" /></p>
+
+<p>Each column of a table represents a tactic of an attacker, the general strategy they are trying to pursue.</p>
+
+<h2 id="the-diamond-model-assists-with-intrusion-analysis">the Diamond Model assists with intrusion analysis.</h2>
+
+<ul>
+  <li>Let’s look at 4 core features of a Diamond Model</li>
+</ul>
+
+<p><code class="language-plaintext highlighter-rouge">Adversary</code></p>
+
+<p><code class="language-plaintext highlighter-rouge">Victim</code></p>
+
+<p><code class="language-plaintext highlighter-rouge">Capability</code></p>
+
+<p><code class="language-plaintext highlighter-rouge">Infrastructure</code></p>
+
+<h2 id="password-forensics">Password forensics</h2>
+
+<p>Password cracking plays a role in the forensic analysis toolkit. Let’s take a look at how passwords are stored and how those password cracking utilities can be used to access stored passwords.</p>
+
+<p>When user attempts to login into the system, the password files contain user credentials on Linux for instance, so the login process checks the password file to determine whether the password is valid. The file doesn’t contain the copy of the password but a <code class="language-plaintext highlighter-rouge">password hash</code>. Hash is computed by using a one-way function. When a user logs in, the login process takes the password provided by the user, computes a hash and then compares that hash with a hash stored in the password file. If the two hashes match- the user is logged in succesfully.</p>
+
+<p>This is however still not secure, so the first step in <code class="language-plaintext highlighter-rouge">securing</code> this approach is to remove password hashes from the publicly available <code class="language-plaintext highlighter-rouge">etc</code> password file.</p>
+
+<figure class="highlight"><pre><code class="language-ruby" data-lang="ruby"><span class="sr">/etc/</span><span class="ss">passwd: </span><span class="no">Removed</span> <span class="no">Passwords</span></code></pre></figure>
+
+<p>Passwords still exist, however they could be stored in a <code class="language-plaintext highlighter-rouge">Shadow File</code></p>
+
+<figure class="highlight"><pre><code class="language-ruby" data-lang="ruby"><span class="sr">/etc/s</span><span class="ss">hadow: </span><span class="no">Shadow</span> <span class="no">File</span></code></pre></figure>
+
+<p>The shadow file could be <code class="language-plaintext highlighter-rouge">highly restricted</code>, so only a superuser can have access to it.</p>
+
+<p>Now, let’s take a look <code class="language-plaintext highlighter-rouge">how the hashing works</code>.</p>
+
+<h2 id="hash-function">Hash Function</h2>
+
+<p>A mathematical function that converts a variable-length input into a fixed-length output.</p>
+
+<h2 id="hash-function-criteria">Hash Function Criteria</h2>
+
+<ul>
+  <li>It must produce a completely different output for each input</li>
+  <li>It must be computationally difficult to retrieve the input from the output</li>
+  <li>It must be computationally difficult to find two different inputs that generate the same output.</li>
+</ul>
+
+:ET
