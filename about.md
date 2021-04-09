@@ -10,3 +10,4 @@ background: '/img/bg-about.jpg'
 {% endhighlight ruby %}
 
 If you have any comments or inquiries, please reach out to [annatnyc@gmail.com](mailto:annatnyc@gmail.com) 
+
