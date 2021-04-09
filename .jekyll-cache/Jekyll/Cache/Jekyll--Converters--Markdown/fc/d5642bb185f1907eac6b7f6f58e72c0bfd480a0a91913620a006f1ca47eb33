@@ -1,0 +1,19 @@
+I"·<h1 id="sdn">SDN</h1>
+
+<p>SDN relates to Cloud customers or tenants easily provisioning Virtual Network resources on a cloud computing environment. SDN architecture begins with SDN interface, this is what client tenants interact with, such as GUI web portal or could be command line tools.</p>
+
+<p>The next thing that happens is SDN controller software, it goes ahead and configures the underlying equipment.</p>
+
+<p>SDN consist of a Control and a Data Plane. The Control Plane is the user interface to configure undeerlying network devices. The Data Plane is the actual processing of the network traffic by the underlying network infrastructure equipment. As a result, public cloud providers support SDN such as Microsoft Azure, Google Cloud Platform and AWS, to name a few. There are also virtualization vendors that support SDN, such as: VMware NSX, Microwsoft Windows Server and Cisco Open SDN Controller. So SDN are being used often in cloud computing to help provision virtual network configurations.</p>
+
+<h2 id="vpc">VPC</h2>
+
+<p>In AWS, VPC is virtual private cloud. Itâ€™s a virtual network that is defined in AWS platform.</p>
+
+<p>We are going to use AWS platiform for demo purposes.</p>
+
+<p>First we will receive a list of existing Virtual Private Clouds. We will create a VPC and essentially create a subnet which ultimately will allow me to deploy virtual machines in that subnet.</p>
+
+<p><img src="/img/posts/SDN/pic2.jpeg" alt="IMDb page" /></p>
+
+:ET

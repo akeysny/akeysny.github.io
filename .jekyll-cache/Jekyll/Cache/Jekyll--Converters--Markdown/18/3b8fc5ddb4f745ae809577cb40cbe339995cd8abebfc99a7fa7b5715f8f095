@@ -1,0 +1,6 @@
+I"ù<h1 id="sdn">SDN</h1>
+
+<p>SDN relates to Cloud customers or tenants easily provisioning Virtual Network resources on a cloud computing environment. SDN architecture begins with SDN interface, this is what client tenants interact with, such as GUI web portal or could be command line tools.</p>
+
+<p>The next thing that happens is SDN controller software, it goes ahead and configures the underlying equipment.</p>
+:ET
